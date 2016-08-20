@@ -34,16 +34,29 @@ var endings = [
   'mé',
   'món',
   'mémon',
-  'mí'
+  'mí',
+  'mito',
+  'mbito',
+  'mbino',
+  'mbini',
+  'mbinito'
 ]
 
+var getRand = function(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
 var Zumbo = function(){
-  if(Math.random() * 200 === 1) return 'Elliot';
+  if(Math.floor(Math.random() * 100) === 1) return 'Elliot';
   var gumbo = "";
-  gumbo += starters[Math.floor(Math.random() * starters.length)];
-  gumbo += firstVowels[Math.floor(Math.random() * firstVowels.length)];
-  gumbo += endings[Math.floor(Math.random() * endings.length)];
+  gumbo += getRand(starters);
+  gumbo += getRand(firstVowels);
+  gumbo += getRand(endings);
   return gumbo;
+}
+
+Jambones.Gumbify = function(){
+  return getRand(Jambones.fns)();
 }
 
 
