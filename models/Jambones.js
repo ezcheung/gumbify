@@ -42,6 +42,14 @@ var endings = [
   'mbinito'
 ]
 
+var shortEnds = [
+  'im',
+  'am',
+  'um',
+  'om',
+  'umb'
+]
+
 var getRand = function(arr){
   return arr[Math.floor(Math.random() * arr.length)];
 }
@@ -55,11 +63,21 @@ var Zumbo = function(){
   return gumbo;
 }
 
+var Goomba = function(){
+  var gumbo = "";
+  gumbo += getRand(starters);
+  gumbo += getRand(shortEnds);
+  gumbo += " ";
+  gumbo += getRand(starters);
+  gumbo += getRand(shortEnds);
+  return gumbo
+}
+
 Jambones.Gumbify = function(){
   return getRand(Jambones.fns)();
 }
 
 
 
-Jambones.fns = [Zumbo];
+Jambones.fns = [Zumbo, Goomba];
 
