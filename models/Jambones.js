@@ -7,7 +7,6 @@ var starters = [
   'Qu',
   'Zh',
   'Gr',
-  'W'
 ];
 
 var firstVowels = [
@@ -16,7 +15,6 @@ var firstVowels = [
   'i',
   'u',
   'ai',
-  'ou',
   'oo'
 ];
 
