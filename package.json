@@ -1,0 +1,12 @@
+{
+  "author": "Elliot Cheung",
+  "repository": {
+    "type": "git",
+    "url" : "https://github.com/ezcheung/gumbify"
+  },
+  "dependencies": {
+    "browserify-middleware": "^7.0.0",
+    "express": "^4.13.0",
+    "mithril": "0.2.2-rc.1"
+  }  
+}
