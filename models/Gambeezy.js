@@ -64,8 +64,6 @@ Krishanify.mistypes = {
   'y': ['t', 'h', 'u'],
   'z': ['a', 'x']
 }
-
-Gambeezy.modifiers = {
-  Darcify: Darcify,
-  Krishanify: Krishanify
-}
+Gambeezy.Darcify = Darcify;
+Gambeezy.Krishanify = Krishanify;
+Gambeezy.modifiers = [Darcify, Krishanify];

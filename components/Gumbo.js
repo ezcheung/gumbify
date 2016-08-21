@@ -40,13 +40,14 @@ Gumbo.controller = function(){
     console.log("Current trombone: ", ctrl.trombone);
     console.log("Current gramie: ", ctrl.gramie);
     console.log("Current gamgam: ", ctrl.gamgam);
+    console.log("List of options: ", optionList());
   }, 3000);
 
 }
 
 Gumbo.view = function(ctrl){
   return m('gibbins', [
-      m('h1', ctrl.gamgam ? Gambeezy.modifiers[ctrl.gamgam](ctrl.trombone) : ctrl.trombone),
+      m('h1', ctrl.gamgam ? Gambeezy[ctrl.gamgam](ctrl.trombone) : ctrl.trombone),
       m('div'),
       m('img', {src:ctrl.gramieUrls[ctrl.gramie]}),
       m('div'),
@@ -62,7 +63,7 @@ Gumbo.view = function(ctrl){
 var optionList = function(){
   var list = [];
   list.push(m('option', "No Modifier"));
-  for(var i in Gambeezy.modifiers){
+  for(var i = 0; i < Gambeezy.modifiers.length; i++){
     list.push(m('option', Gambeezy.modifiers[i].name));
   }
   return list;
