@@ -17,6 +17,12 @@ h1{
   text-align: center;
 }
 
+label{
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+}
+
 button{
   display: block;
   margin-left: auto;
@@ -33,5 +39,5 @@ select{
   display: block;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 5px;
 }

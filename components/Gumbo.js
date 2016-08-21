@@ -54,6 +54,7 @@ Gumbo.view = function(ctrl){
       m('div'),
       m('button', {onclick: ctrl.zumba}, ctrl.trombone === "Jamie" ? "Start Jambifying!" : "Gumbo another Gibbins!"),
       m('div'),
+      m('label', 'Modifiers: '),
       m('select', {onchange: function(e){
         if(e.currentTarget.value === "No Modifier") ctrl.gamgam = null;
         else ctrl.gamgam = e.currentTarget.value;

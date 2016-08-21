@@ -4,6 +4,7 @@ var Gambeezy = module.exports;
 * Makes speech Darcified. TODO: Change image if filter is set to Darcy
 */
 var Darcify = function(gumbo){
+  gumbo += '!';
   var count = Math.floor(Math.random() * 20 ) + 1;
   for(var i = 0; i < count; i++){
     var coin = Math.floor(Math.random() * 2);
