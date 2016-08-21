@@ -28,7 +28,7 @@ var Krishanify = function(gumbo){
     }
 
     if(Math.random() <= .1){
-      chars[i] = Krishanify.mistypes[chars[i][Math.floor(Math.random() * Krishanify.mistypes[chars[i]].length)]];
+      chars[i] = mistypes[chars[i]][Math.floor(Math.random() * mistypes[chars[i]].length)];
     }
   }
 
@@ -36,12 +36,12 @@ var Krishanify = function(gumbo){
 }
 
 Krishanify.name = 'Krishanify';
-Krishanify.mistypes = {
-  //'a': ['q', 's', 'x'],
+var mistypes = {
+  'a': [],
   'b': ['n', 'v', 'g'],
   'c': ['x', 'd', 'v'],
   'd': ['s', 'c', 'f', 'e'],
-  //'e'
+  'e': [],
   'f': ['d', 'v', 'g', 'r'],
   'g': ['f', 'b', 'g', 't'],
   'h': ['g', 'n', 'j', 'y'],
