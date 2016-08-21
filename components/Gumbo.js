@@ -41,6 +41,7 @@ Gumbo.controller = function(){
     console.log("Current gramie: ", ctrl.gramie);
     console.log("Current gamgam: ", ctrl.gamgam);
     console.log("List of options: ", optionList());
+    console.log("Gambeezy modifiers: ", Gambeezy.modifiers);
   }, 3000);
 
 }
