@@ -17,7 +17,7 @@ var Darcify = function(gumbo){
 Darcify.name = "Darcify";
 
 var Krishanify = function(gumbo){
-  var chars = gumbo.split("");
+  var chars = gumbo.toLowerCase().split("");
 
   for(var i = 1; i < chars.length; i++){
     if(Math.random() <= .25){
@@ -28,7 +28,9 @@ var Krishanify = function(gumbo){
     }
 
     if(Math.random() <= .1){
+      if(mistypes[chars[i]]){  
       chars[i] = mistypes[chars[i]][Math.floor(Math.random() * mistypes[chars[i]].length)];
+      }
     }
   }
 

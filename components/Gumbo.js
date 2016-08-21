@@ -36,13 +36,13 @@ Gumbo.controller = function(){
     ctrl.gramie = Math.floor(Math.random() * ctrl.gramieUrls.length); //current image index
   }
 
-  setInterval(function(){
+  /*setInterval(function(){
     console.log("Current trombone: ", ctrl.trombone);
     console.log("Current gramie: ", ctrl.gramie);
     console.log("Current gamgam: ", ctrl.gamgam);
     console.log("List of options: ", optionList());
     console.log("Gambeezy modifiers: ", Gambeezy.modifiers);
-  }, 3000);
+  }, 3000);*/
 
 }
 
