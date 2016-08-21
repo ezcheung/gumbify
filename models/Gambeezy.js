@@ -66,4 +66,4 @@ var mistypes = {
 }
 Gambeezy.Darcify = Darcify;
 Gambeezy.Krishanify = Krishanify;
-Gambeezy.modifiers = [Darcify, Krishanify];
+Gambeezy.modifiers = ["Darcify", "Krishanify"];

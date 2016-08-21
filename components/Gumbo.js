@@ -65,7 +65,7 @@ var optionList = function(){
   var list = [];
   list.push(m('option', "No Modifier"));
   for(var i = 0; i < Gambeezy.modifiers.length; i++){
-    list.push(m('option', Gambeezy.modifiers[i].name));
+    list.push(m('option', Gambeezy.modifiers[i]));
   }
   return list;
 }
