@@ -1,3 +1,7 @@
+/*
+* Speech modifiers
+*/
+
 var Gambeezy = module.exports;
 
 /*
