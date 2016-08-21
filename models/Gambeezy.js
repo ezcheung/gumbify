@@ -18,6 +18,7 @@ var Darcify = function(gumbo){
 Darcify.name = "Darcify";
 
 var Krishanify = function(gumbo){
+  if(Math.random() <= .01) return "Prestige Melt"
   var chars = gumbo.toLowerCase().split("");
 
   for(var i = 1; i < chars.length; i++){
