@@ -1,5 +1,6 @@
 var Jambones = require('../models/Jambones.js');
 var Gambeezy = require('../models/Gambeezy.js');
+var Zamboni = require('../models/Zamboni.js');
 
 var m = require('mithril');
 
@@ -9,6 +10,7 @@ Gumbo.controller = function(){
   var ctrl = this;
 
   ctrl.trombone = "Jamie"; //current nickname
+  ctrl.targetImage = ['gramieUrls'];
   ctrl.gramie = 8; //current image index
   ctrl.gamgams = []; //current modifier 
 
@@ -30,10 +32,12 @@ Gumbo.controller = function(){
   'http://imgur.com/8v7Vui6.jpg'
   ]
 
+  ctrl.orangeUrl = ['https://s-media-cache-ak0.pinimg.com/736x/29/ce/c7/29cec71622db0a6fe0da2b3f4d132b06.jpg'];
+
 
   ctrl.zumba = function(){
     ctrl.trombone = Jambones.Gumbify(); //current nickname
-    ctrl.gramie = Math.floor(Math.random() * ctrl.gramieUrls.length); //current image index
+    ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length); //current image index
   }
 
   setInterval(function(){
@@ -43,16 +47,18 @@ Gumbo.controller = function(){
     // console.log("List of options: ", optionList());
     //console.log("Gambeezy modifiers: ", Gambeezy.modifiers);
     console.log("Current list of modifiers: ", ctrl.gamgams);
+    console.log("Laurified? ", Zamboni.Laurify);
+    console.log("Current image array: ", ctrl.targetImage);
   }, 3000);
 
 }
 
 Gumbo.view = function(ctrl){
-  return m('gibbins', [
+  return m('gibbins', {class:'default'}, [
       //m('h1', ctrl.gamgam ? Gambeezy[ctrl.gamgam](ctrl.trombone) : ctrl.trombone),
       m('h1', ctrl.gamgams.length ? ctrl.gamgams.reduce((a, f)=> Gambeezy[f](a), ctrl.trombone) : ctrl.trombone),
       m('div'),
-      m('img', {src:ctrl.gramieUrls[ctrl.gramie]}),
+      m('img', {src: ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]][ctrl.gramie]}),
       m('div'),
       m('button', {onclick: ctrl.zumba}, ctrl.trombone === "Jamie" ? "Start Jambifying!" : "Gumbo another Gibbins!"),
       m('div', {class: "controls"}, [
@@ -77,9 +83,24 @@ var optionList = function(){
 
 var optionCheckboxes = function(ctrl){
   var list = [];
+
   for (let i = 0; i < Gambeezy.modifiers.length; i++){
     list.push(m('label', Gambeezy.modifiers[i]));
-    list.push(m('input', {type: 'checkbox', value: Gambeezy.modifiers[i], onchange: function(){toggleModifier(Gambeezy.modifiers[i], ctrl)}}))
+    list.push(m('input', {type: 'checkbox', 
+                          value: Gambeezy.modifiers[i], 
+                          onchange: function(){toggleModifier(Gambeezy.modifiers[i], ctrl)}
+                         }))
+  }
+
+  for(let j = 0; j < Zamboni.modifiers.length; j++){
+    list.push(m('label', Zamboni.modifiers[j]));
+    list.push(m('input', {type: 'checkbox',
+                          value: Zamboni.modifiers[j],
+                          onchange: function(){
+                            //Zamboni[Zamboni.modifiers[j]] = !Zamboni[Zamboni.modifiers[j]];
+                            Zamboni[Zamboni.modifiers[j]](ctrl);
+                            m.redraw();
+                          }}))
   }
   return list;
 }

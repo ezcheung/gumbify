@@ -12,6 +12,21 @@ img{
 body{
   background-color: #444;
   font-family: Arial;
+  color: white;
+}
+
+.laurified{
+  font-size: 0.25em;
+}
+
+body.morganified{
+  background-color: #ff9900;
+  color: #ff6600;
+}
+
+body.laurified > #app > gibbins > img{
+  height: 75px;
+  width: 75px;
 }
 
 h1{
@@ -24,6 +39,7 @@ label{
 
 input{
   white-space: nowrap;
+  margin-right: 10px;
 }
 
 button{
@@ -34,7 +50,6 @@ button{
 }
 
 #app{
-  color: white;
   stroke: black 1px;
 }
 
@@ -50,4 +65,5 @@ select{
   background-color: rgba(150, 150, 150, 0.6);
   margin-left: 0px;
   margin-right: 0px;
+  padding: 0px;
 }

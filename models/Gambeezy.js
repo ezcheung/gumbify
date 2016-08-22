@@ -72,6 +72,10 @@ var mistypes = {
   'y': ['t', 'h', 'u'],
   'z': ['a', 'x']
 }
+
+
+
 Gambeezy.Darcify = Darcify;
 Gambeezy.Krishanify = Krishanify;
+
 Gambeezy.modifiers = ["Darcify", "Krishanify"];
