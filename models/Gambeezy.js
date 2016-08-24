@@ -46,7 +46,7 @@ var Krishanify = function(gumbo){
 var Cazify = function(gumbo){
   var coin = Math.random();
 
-  if(coin < .8){
+  if(coin < .92){
     var count = Math.floor(Math.random() * 23) + 2;
     gumbo += " Ta ";
     for(var i = 0; i < count; i++){
@@ -54,8 +54,7 @@ var Cazify = function(gumbo){
     } 
     return gumbo;
   } 
-  if(coin < .95) return gumbo + " FUCK";
-  else return " fuck off krishan";
+  else return "fuck off krishan";
 }
 
 Krishanify.name = 'Krishanify';

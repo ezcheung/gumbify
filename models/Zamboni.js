@@ -6,7 +6,7 @@ var $ = require('jquery');
 
 var Zamboni = module.exports
 
-Zamboni.Laurify = function(){
+Zamboni.Laurifymus = function(){
   $('body').toggleClass('laurified');
 };
 
@@ -18,4 +18,12 @@ Zamboni.Morganify = function(ctrl){
   //ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length);
 }
 
-Zamboni.modifiers = ["Laurify", "Morganify"];
+Zamboni.Joshify = function(ctrl){
+  $('body').toggleClass('joshified');
+  var index = ctrl.targetImage.indexOf('imgjoshify');
+  if(index < 0) ctrl.targetImage.push('imgjoshify');
+  else ctrl.targetImage.splice(index, 1);
+  //ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length);
+}
+
+Zamboni.modifiers = ["Laurifymus", "Morganify", "Joshify"];

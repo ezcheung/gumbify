@@ -34,10 +34,12 @@ Gumbo.controller = function(){
 
   ctrl.imgmorganify = ['https://s-media-cache-ak0.pinimg.com/736x/29/ce/c7/29cec71622db0a6fe0da2b3f4d132b06.jpg'];
 
+  ctrl.imgjoshify = ['http://imgur.com/hCpg1TE.png', 'http://imgur.com/nAPfuuE.png', 'http://imgur.com/RhEsCIF.png'];
+
 
   ctrl.zumba = function(){
     ctrl.trombone = Jambones.Gumbify(); //current nickname
-    //ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length); //current image index
+    ctrl.gramie = Math.floor(Math.random() * ctrl.gramieUrls.length); //current image index
   }
 
   //TODO: comment ths out/remove it for final version
@@ -120,7 +122,7 @@ var getRand = function(arr){
 
 var images = function(ctrl){
   var list = [];
-  list.push(m("img", {class:'images', src: getRand(ctrl.gramieUrls)}));
+  list.push(m("img", {class:'images', src: ctrl.gramieUrls[ctrl.gramie]}));
   for(let i = 0; i < ctrl.targetImage.length; i++){
     console.log("TargetImages: ", ctrl.targetImage);
     list.push(m("img", {class:'over ' + ctrl.targetImage[i], src: getRand(ctrl[ctrl.targetImage[i]])}))
