@@ -19,9 +19,26 @@ body{
   font-size: 0.25em;
 }
 
+.images{
+  position: relative;
+  left: 0;
+  right: 0;
+}
+
+.over{
+  position:absolute;
+  left:0;
+  right:0;
+  top: 0px;
+}
+
 body.morganified{
   background-color: #ff9900;
   color: #ff6600;
+}
+
+.imgmorganify{
+  opacity: 0.75;
 }
 
 body.laurified > #app > gibbins > img{

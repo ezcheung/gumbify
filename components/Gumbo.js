@@ -10,7 +10,7 @@ Gumbo.controller = function(){
   var ctrl = this;
 
   ctrl.trombone = "Jamie"; //current nickname
-  ctrl.targetImage = ['gramieUrls'];
+  ctrl.targetImage = [];
   ctrl.gramie = 8; //current image index
   ctrl.gamgams = []; //current modifier 
 
@@ -32,25 +32,25 @@ Gumbo.controller = function(){
   'http://imgur.com/8v7Vui6.jpg'
   ]
 
-  ctrl.orangeUrl = ['https://s-media-cache-ak0.pinimg.com/736x/29/ce/c7/29cec71622db0a6fe0da2b3f4d132b06.jpg'];
+  ctrl.imgmorganify = ['https://s-media-cache-ak0.pinimg.com/736x/29/ce/c7/29cec71622db0a6fe0da2b3f4d132b06.jpg'];
 
 
   ctrl.zumba = function(){
     ctrl.trombone = Jambones.Gumbify(); //current nickname
-    ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length); //current image index
+    //ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length); //current image index
   }
 
   //TODO: comment ths out/remove it for final version
-  setInterval(function(){
-    console.log("Current trombone: ", ctrl.trombone);
-    // console.log("Current gramie: ", ctrl.gramie);
-    // console.log("Current gamgam: ", ctrl.gamgam);
-    // console.log("List of options: ", optionList());
-    //console.log("Gambeezy modifiers: ", Gambeezy.modifiers);
-    console.log("Current list of modifiers: ", ctrl.gamgams);
-    console.log("Laurified? ", Zamboni.Laurify);
-    console.log("Current image array: ", ctrl.targetImage);
-  }, 3000);
+  // setInterval(function(){
+  //   console.log("Current trombone: ", ctrl.trombone);
+  //   // console.log("Current gramie: ", ctrl.gramie);
+  //   // console.log("Current gamgam: ", ctrl.gamgam);
+  //   // console.log("List of options: ", optionList());
+  //   //console.log("Gambeezy modifiers: ", Gambeezy.modifiers);
+  //   console.log("Current list of modifiers: ", ctrl.gamgams);
+  //   console.log("Laurified? ", Zamboni.Laurify);
+  //   console.log("Current image array: ", ctrl.targetImage);
+  // }, 3000);
 
 }
 
@@ -59,7 +59,8 @@ Gumbo.view = function(ctrl){
       //m('h1', ctrl.gamgam ? Gambeezy[ctrl.gamgam](ctrl.trombone) : ctrl.trombone),
       m('h1', ctrl.gamgams.length ? ctrl.gamgams.reduce((a, f)=> Gambeezy[f](a), ctrl.trombone) : ctrl.trombone),
       m('div'),
-      m('img', {src: ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]][ctrl.gramie]}),
+      //m('img', {src: ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]][ctrl.gramie]}),
+      m('div', {class:"images"}, images(ctrl)),
       m('div'),
       m('button', {onclick: ctrl.zumba}, ctrl.trombone === "Jamie" ? "Start Jambifying!" : "Gumbo another Gibbins!"),
       m('div', {class: "controls"}, [
@@ -111,4 +112,18 @@ var toggleModifier = function(mod, ctrl){
   var index = ctrl.gamgams.indexOf(mod);
   if(index >= 0) ctrl.gamgams.splice(index, 1);
   else ctrl.gamgams.push(mod); 
+}
+
+var getRand = function(arr){
+  return arr[Math.floor(Math.random() * arr.length)];
+}
+
+var images = function(ctrl){
+  var list = [];
+  list.push(m("img", {class:'images', src: getRand(ctrl.gramieUrls)}));
+  for(let i = 0; i < ctrl.targetImage.length; i++){
+    console.log("TargetImages: ", ctrl.targetImage);
+    list.push(m("img", {class:'over ' + ctrl.targetImage[i], src: getRand(ctrl[ctrl.targetImage[i]])}))
+  }
+  return list;
 }
