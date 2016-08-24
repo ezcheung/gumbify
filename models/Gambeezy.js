@@ -22,7 +22,7 @@ var Darcify = function(gumbo){
 Darcify.name = "Darcify";
 
 var Krishanify = function(gumbo){
-  if(Math.random() <= .01) return "Prestige Melt"
+  if(Math.random() <= .02) return "Prestige Melt"
   var chars = gumbo.toLowerCase().split("");
 
   for(var i = 1; i < chars.length; i++){
@@ -41,6 +41,21 @@ var Krishanify = function(gumbo){
   }
 
   return chars.join("").toLowerCase();
+}
+
+var Cazify = function(gumbo){
+  var coin = Math.random();
+
+  if(coin < .8){
+    var count = Math.floor(Math.random() * 23) + 2;
+    gumbo += " Ta ";
+    for(var i = 0; i < count; i++){
+      gumbo += "x";
+    } 
+    return gumbo;
+  } 
+  if(coin < .95) return gumbo + " FUCK";
+  else return " fuck off krishan";
 }
 
 Krishanify.name = 'Krishanify';
@@ -77,5 +92,6 @@ var mistypes = {
 
 Gambeezy.Darcify = Darcify;
 Gambeezy.Krishanify = Krishanify;
+Gambeezy.Cazify = Cazify;
 
-Gambeezy.modifiers = ["Darcify", "Krishanify"];
+Gambeezy.modifiers = ["Darcify", "Krishanify", "Cazify"];

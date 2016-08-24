@@ -39,7 +39,8 @@ var endings = [
   'mbito',
   'mbino',
   'mbini',
-  'mbinito'
+  'mbinito',
+  'mby',
 ]
 
 var shortEnds = [
@@ -55,7 +56,7 @@ var getRand = function(arr){
 }
 
 var Zumbo = function(){
-  if(Math.floor(Math.random() * 100) === 1) return 'Elliot';
+  if(Math.random() <= .02) return 'Elliot';
   var gumbo = "";
   gumbo += getRand(starters);
   gumbo += getRand(firstVowels);

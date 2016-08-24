@@ -40,6 +40,7 @@ Gumbo.controller = function(){
     ctrl.gramie = Math.floor(Math.random() * ctrl[ctrl.targetImage[ctrl.targetImage.length - 1]].length); //current image index
   }
 
+  //TODO: comment ths out/remove it for final version
   setInterval(function(){
     console.log("Current trombone: ", ctrl.trombone);
     // console.log("Current gramie: ", ctrl.gramie);
